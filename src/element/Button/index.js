@@ -38,7 +38,7 @@ export default function Button(props) {
   }
 
   //UNTUK MENGECEK APAKAH PROPS TYPE ADALAH LINK
-  if (props.type == "link") {
+  if (props.type === "link") {
     //untuk mengecek apakah link dari ecternal atau dari internal
     if (props.isExternal) {
       //jika link external return ini
@@ -48,6 +48,7 @@ export default function Button(props) {
           className={className.join(" ")}
           style={props.style}
           target={props.target === "_blank" ? "_blank" : undefined}
+          //noopener norefererr untuk sio
           rel={props.target === "_blank" ? "noopener norefererr" : undefined}
         >
           {props.children}
